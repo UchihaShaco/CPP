@@ -1,17 +1,7 @@
-
 #include "main.hpp"
 
 
-class PhoneBook 
-{
-private:
-    Contact contacts[8];
-    int contactCount;
-
-public:
-    PhoneBook() : contactCount(0) {}
-
-    void addContact() 
+ void PhoneBook::addContact() 
 	{
         Contact newContact;
 
@@ -47,23 +37,23 @@ public:
             return; 
         }
 		newContact.setDarkestSecret(temp);
-		if (contactCount < 8)
+		if (getContactCount() < 8)
  		{
-            contacts[contactCount] = newContact;
+            contacts[getContactCount()] = newContact;
             std::cout << "Contact added successfully." << std::endl;
         }
 
 		else
 		{
-            contacts[contactCount % 8] = newContact;
+            contacts[getContactCount() % 8] = newContact;
             std::cout << "Contact replaced the oldest contact." << std::endl;
         }
-		contactCount++;
+		incrementContactCount();
     }
 
-    void searchContact()
+  void PhoneBook::searchContact()
 	{
-        if (contactCount == 0)
+        if ( getContactCount() == 0)
 		{
             std::cout << "Phone book is empty." << std::endl;
             return;
@@ -74,11 +64,11 @@ public:
                   << std::setw(10) << "Last Name" << "|"
                   << std::setw(10) << "nickName" << "|" << std::endl;
 
-        for (int i = 0; i < (contactCount); i++)
+        for (int i = 0; i < (getContactCount()); i++)
 		{
-            std::string firstName = contacts[i].firstName;
-            std::string lastName = contacts[i].lastName;
-            std::string nickName = contacts[i].nickName;
+            std::string firstName = contacts[i].get_first_name();
+            std::string lastName = contacts[i].get_last_name();
+            std::string nickName = contacts[i].get_nickName();
 
             if (firstName.length() > 10)
 			{
@@ -102,7 +92,7 @@ public:
         }
 
         std::cout << "Enter the index of the contact to display: ";
-        int index;
+        int index = 0;
         if (!(std::cin >> index))
 		{
             std::cin.clear();
@@ -110,17 +100,16 @@ public:
             return;
         }
 
-        if (index >= 0 && index < contactCount)
+        if (index >= 0 && index < getContactCount())
 		{
-            std::cout << "First Name: " << contacts[index].firstName << std::endl;
-            std::cout << "Last Name: " << contacts[index].lastName << std::endl;
-            std::cout << "nickName: " << contacts[index].nickName << std::endl;
-            std::cout << "Phone Number: " << contacts[index].phoneNumber << std::endl;
-            std::cout << "Darkest Secret: " << contacts[index].darkestSecret << std::endl;
+            std::cout << "First Name: " << contacts[index].get_first_name() << std::endl;
+            std::cout << "Last Name: " << contacts[index].get_last_name() << std::endl;
+            std::cout << "nickName: " << contacts[index].get_nickName() << std::endl;
+            std::cout << "Phone Number: " << contacts[index].get_phone_number() << std::endl;
+            std::cout << "Darkest Secret: " << contacts[index].get_darkest_secret() << std::endl;
         }
 		else
 		{
             std::cout << "Invalid index." << std::endl;
         }
     }
-};

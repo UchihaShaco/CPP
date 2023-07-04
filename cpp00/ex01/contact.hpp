@@ -24,10 +24,6 @@ public:
 
 	void ft_set_values(std::string f, std::string l, std::string n, std::string ph, std::string d);
 
-	// Const before ";" tells that in the function we will never modify the instances attributes
-	// (No assignation inside, like this.first_name = "eat rabbit :P ")
-	void ft_print(void) const;
-
 	std::string	get_first_name() const;
 	std::string	get_last_name() const;
 	std::string	get_nickName() const;

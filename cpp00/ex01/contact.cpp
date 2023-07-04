@@ -1,6 +1,9 @@
 
 #include "main.hpp"
 
+Contact::Contact()
+{
+}
 std::string	Contact::get_first_name() const
 {
 	return (firstName);
@@ -24,4 +27,17 @@ std::string	Contact::get_phone_number() const
 std::string	Contact::get_darkest_secret() const
 {
 	return (darkestSecret);
+}
+
+void Contact::ft_set_values(std::string f, std::string l, std::string n, std::string ph, std::string d) 
+{
+	firstName = f;
+	lastName = l;
+	nickName = n;
+	phoneNumber = ph;
+	darkestSecret = d;
+}
+
+Contact::~Contact()
+{
 }
