@@ -1,15 +1,15 @@
-
-CC = clang++
-CFLAGS = -Wall -Werror -Wextra
-NAME = megaphone
-SRC = megaphone.cpp
+CC = g++
+CFLAGS = -Wall -g -std=c++98
+NAME = main
+SRC = account.cpp tests.cpp
 
 all: $(NAME)
 
-$(NAME):
-    $(CC) $(CFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(SRC)
+	$(CC) $(CFLAGS) -o $(NAME) $(SRC)
 
 clean:
-    rm -f $(NAME)
-
+	rm -f *.o
+fclean: clean
+	rm -f $(NAME)
 re: clean all

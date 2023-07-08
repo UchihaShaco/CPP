@@ -5,8 +5,6 @@ NAME = megaphone
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-.PHONY: all clean
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -16,4 +14,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(NAME)
+	rm -f $(NAME)
+fclean: clean
+	rm -f $(OBJS)
+.PHONY: all clean
