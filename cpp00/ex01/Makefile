@@ -1,5 +1,5 @@
-CC = g++
-CFLAGS = -Wall -Wextra -Werror
+CC = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 TARGET = phonebook
 SRCS = phonebook.cpp main.cpp contact.cpp
 OBJS = $(SRCS:.cpp=.o)
@@ -7,10 +7,10 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
+	$(CC) $(CXXFLAGS) $(OBJS) -o $(TARGET)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

@@ -10,16 +10,18 @@ private:
     int contactCount;
 
 public:
-    PhoneBook() : contactCount(0) {}
+PhoneBook();
+
+~PhoneBook();
+
 void addContact();
 void searchContact();
 
-int getContactCount() const { return contactCount; }
-void incrementContactCount() { contactCount++; }
+int getContactCount() const;
+void incrementContactCount();
 
-int getContactCount(const PhoneBook& phoneBook)
-{
-    return phoneBook.getContactCount();
-}
+int getContactCount(const PhoneBook& phoneBook);
 
 };
+/*
+*/

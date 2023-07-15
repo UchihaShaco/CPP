@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 		int i = 1;
 		while (i < argc)
 		{
-			str += std::string(argv[i]) + " ";
+			str += std::string(argv[i]);
 			i++;
 		}
 

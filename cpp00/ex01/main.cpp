@@ -8,7 +8,7 @@ int main()
 	{
         std::string command;
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        if (!getline(std::cin, command))                                              
+        if (!std::getline(std::cin, command))                                              
 		{
             break; 
     	}
