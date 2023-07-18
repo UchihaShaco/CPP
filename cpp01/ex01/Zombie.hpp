@@ -12,7 +12,7 @@ public:
 	Zombie();
 	Zombie(std::string name);
 	~Zombie();
-	void announce(void);
+	void announce(void) const;
 	void randomChump(std::string name);
 	void setName(std::string name);
 

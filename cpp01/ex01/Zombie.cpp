@@ -1,5 +1,5 @@
 #include "Zombie.hpp"
-
+int	count = 0;
 Zombie::Zombie()
 {
 
@@ -15,7 +15,7 @@ void Zombie::setName(std::string name)
 	this->name = name;
 }
 
-void Zombie::announce(void)
+void Zombie::announce(void) const
 {
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
