@@ -35,9 +35,10 @@ void Replace::replace()
     {
         std::string newLine;
         size_t pos = 0;
+        size_t foundPos;
         while (pos < line.length())
         {
-            size_t foundPos = line.find(this->s1, pos);
+            foundPos = line.find(this->s1, pos);
             if (foundPos == std::string::npos)
             {
                 newLine += line.substr(pos);
@@ -47,13 +48,14 @@ void Replace::replace()
             newLine += this->s2;
             pos = foundPos + this->s1.length();
         }
-        ofs << newLine << std::endl;
+        if (!ifs.eof())
+            newLine += "\n";
+        ofs << newLine;
     }
 
     ifs.close();
     ofs.close();
 }
-
 
 Replace::~Replace()
 {

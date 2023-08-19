@@ -15,4 +15,3 @@ int main ()
 	std::getline(std::cin >> std::ws , str);
 	std::cout << str << std::endl;
 }
-// to compile and run: clang++ -Wall -Wextra -Werror test.cpp && ./a.out
