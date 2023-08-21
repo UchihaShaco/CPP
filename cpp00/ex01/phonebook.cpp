@@ -22,72 +22,53 @@
         std::cout << "Enter first name: ";
 
         if (!getline(std::cin, temp))
-		{
-            return; 
-        }
+            return;
 		while (temp.empty())
 		{
 			std::cout << "Enter first name: ";
 			if (!getline(std::cin, temp))
-			{
 				return;
-			}
+
 		}
 		newContact.setFirstName(temp);
         std::cout << "Enter last name: ";
         if (!getline(std::cin, temp))
-		{
             return; 
-        }
 		while (temp.empty())
 		{
 			std::cout << "Enter last name: ";
 			if (!getline(std::cin, temp))
-			{
 				return;
-			}
 		}
 		newContact.setLastName(temp);
         std::cout << "Enter nickName: ";
         if (!getline(std::cin, temp))
-		{
             return; 
-        }
 		while (temp.empty())
 		{
 			std::cout << "Enter nickName: ";
 			if (!getline(std::cin, temp))
-			{
 				return;
-			}
 		}
 		newContact.setNickName(temp);
         std::cout << "Enter phone number: ";
         if (!getline(std::cin, temp))
-		{
             return; 
-        }
 		while(temp.empty())
 		{
 			std::cout << "Enter phone number: ";
 			if (!getline(std::cin, temp))
-			{
 				return;
-			}
 		}
 		newContact.setPhoneNumber(temp);
         std::cout << "Enter darkest secret: ";
         if (!getline(std::cin, temp))
-		{
             return; 
-        }
 		while(temp.empty())
 		{
 			std::cout << "Enter darkest secret: ";
 			if (!getline(std::cin, temp))
-			{
 				return;
-			}
 		}
 		newContact.setDarkestSecret(temp);
 		if (getContactCount() < 8)
@@ -125,19 +106,13 @@
             std::string nickName = contacts[i].get_nickName();
 
             if (firstName.length() > 10)
-			{
                 firstName = firstName.substr(0, 9) + ".";
-            }
 
             if (lastName.length() > 10)
-			{
                 lastName = lastName.substr(0, 9) + ".";
-            }
 
             if (nickName.length() > 10)
-			{
                 nickName = nickName.substr(0, 9) + ".";
-            }
 
             std::cout << std::setw(10) << i << "|"
                       << std::setw(10) << firstName << "|"
@@ -152,19 +127,13 @@
             std::string nickName = contacts[i].get_nickName();
 
             if (firstName.length() > 10)
-			{
                 firstName = firstName.substr(0, 9) + ".";
-            }
 
             if (lastName.length() > 10)
-			{
                 lastName = lastName.substr(0, 9) + ".";
-            }
 
             if (nickName.length() > 10)
-			{
                 nickName = nickName.substr(0, 9) + ".";
-            }
 
             std::cout << std::setw(10) << i << "|"
                       << std::setw(10) << firstName << "|"
@@ -190,9 +159,7 @@
             std::cout << "Darkest Secret: " << contacts[index].get_darkest_secret() << std::endl;
         }
 		else
-		{
             std::cout << "Invalid index." << std::endl;
-        }
 		    while (std::cin.get() != '\n') { 
     }
 
