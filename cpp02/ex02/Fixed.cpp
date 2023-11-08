@@ -97,7 +97,7 @@ bool Fixed::operator<(const Fixed& other) const
 // equals
 bool Fixed::operator>=(const Fixed& other) const
 {
-    return this->toFloat() >= other.toFloat();
+    return this->toFloat() >= other.toFloat(); 
 }
 
 bool Fixed::operator<=(const Fixed& other) const
@@ -157,9 +157,8 @@ Fixed::Fixed(const int intValue)
 Fixed::Fixed(const float floatValue)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->value = roundf(floatValue * (1 << fractionalBits));
+    this->value = roundf(floatValue * (1 << fractionalBits)); // this will round the float to the nearest integer
 }
-
 Fixed::Fixed(const Fixed& other)
 {
     std::cout << "Copy constructor called" << std::endl;
@@ -174,7 +173,7 @@ Fixed::~Fixed()
 
 float Fixed::toFloat() const
 {
-    return static_cast<float>(this->value) / (1 << fractionalBits);
+    return((float)value / (float)(256));
 }
 
 int Fixed::toInt() const

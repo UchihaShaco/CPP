@@ -22,4 +22,4 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 };
 
-#endif // FIXED_HPP
+#endif`
