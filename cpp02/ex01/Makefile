@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET = ex00
+TARGET = ex01
 SRCS = main.cpp Fixed.cpp
 OBJS = $(SRCS:.cpp=.o)
 
