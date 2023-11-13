@@ -1,52 +1,52 @@
-
-#pragma once 
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
-#include <cmath> // to install this library in linux  sudo apt-get install libcmath-dev
+#include <cmath>
 
 class Fixed
 {
 private:
-    int value;
-    static const int fractionalBits = 8;
+	int	fixedPointNum;
+	static const int	fraction_bits = 8;
+
 public:
-    Fixed();
-    Fixed(const int intValue);
-    Fixed(const float floatValue);
-    Fixed(const Fixed& other);
-    Fixed& operator=(const Fixed& other);
-    Fixed operator+(const Fixed& other) const;
-    Fixed operator-(const Fixed& other) const;
-    Fixed operator*(const Fixed& other) const;
-    Fixed operator/(const Fixed& other) const;
-    Fixed& operator++();
-    Fixed operator++(int);
-    Fixed& operator--();
-    Fixed operator--(int);
-    bool operator>(const Fixed& other) const;
-    bool operator<(const Fixed& other) const;
-    bool operator>=(const Fixed& other) const;
-    bool operator<=(const Fixed& other) const;
-    bool operator==(const Fixed& other) const;
-    bool operator!=(const Fixed& other) const;
-    static Fixed& min(Fixed& a, Fixed& b);
-    static const Fixed& min(const Fixed& a, const Fixed& b);
-    static Fixed& max(Fixed& a, Fixed& b);
-    static const Fixed& max(const Fixed& a, const Fixed& b);
-    
-    ~Fixed();
 
-    float toFloat() const;
-    int toInt() const;
+	Fixed(void);
+	Fixed(const int int_value);
+	Fixed(const float float_value);
+	Fixed(const Fixed &other);
+	Fixed	&operator=(const Fixed &other);
+	~Fixed(void);
 
-    int getRawBits(void) const;
-    void setRawBits(int const raw);
+	void	setRawBits(int const raw);
+	int	getRawBits(void) const;
+	int	toInt(void) const;
+	float	toFloat(void) const;
+	
+	bool	operator>(const Fixed &other);
+	bool	operator<(const Fixed &other);
+	bool	operator>=(const Fixed &other);
+	bool	operator<=(const Fixed &other);
+	bool	operator==(const Fixed &other);
+	bool	operator!=(const Fixed &other);
+
+	Fixed	operator+(const Fixed &other);
+	Fixed	operator-(const Fixed &other);
+	Fixed	operator*(const Fixed &other);
+	Fixed	operator/(const Fixed &other);
+
+	Fixed	&operator++(void);
+	Fixed	&operator--(void);
+	Fixed	operator++(int);
+	Fixed	operator--(int);
+
+	static const	Fixed &min(Fixed &a, Fixed &b);
+	static const	Fixed &min(const Fixed &a, const Fixed &b);
+	static const	Fixed &max(Fixed &a, Fixed &b);
+	static const	Fixed &max(const Fixed &a, const Fixed &b);
 };
 
-Fixed::Fixed()
-{
-}
+std::ostream	&operator<<(std::ostream &out, const Fixed &object);
 
-Fixed::~Fixed()
-{
-}
+#endif

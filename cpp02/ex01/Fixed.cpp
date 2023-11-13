@@ -29,9 +29,9 @@ Fixed& Fixed::operator=(const Fixed& other) {
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
-// using the most simple conversion possible 256
+
 float Fixed::toFloat() const {
-    return (float)value / 256; // or we can do (float)value / 256 or (float)value / 256.0f or (float)value / 256.0  
+    return (float)value / (1 << fractionalBits);
 }
 
 int Fixed::toInt() const {
@@ -42,3 +42,12 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
     os << fixed.toFloat();
     return os;
 }
+
+// std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
+//     os << fixed.value;
+//     return os;
+// }
+// std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
+//     os << fixed.toFloat();
+//     return os;
+// }
