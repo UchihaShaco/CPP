@@ -15,19 +15,12 @@ private:
 
 public:
     ClapTrap(const std::string &name);
+    ClapTrap(const ClapTrap &other);
     ~ClapTrap();
-
+	ClapTrap &operator=(const ClapTrap &other);
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 };
 
 #endif
-/*
-in bashrc to nonrmainette work i need to write 
-export DYLD_LIBRARY_PATH=/Users/$(whoami)/.brew/lib
-export DYLD_FRAMEWORK_PATH=/Users/$(whoami)/.brew/lib
-export DYLD_INCLUDE_PATH=/Users/$(whoami)/.brew/include
-export DYLD_ROOT_PATH=/Users/$(whoami)/.brew
-
-*/

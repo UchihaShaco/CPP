@@ -15,9 +15,14 @@ private:
     unsigned int m_attackDamage;
 
 public:
-    ScavTrap(const std::string &name);
+    // Destructor
     ~ScavTrap();
-
+    // Default constructor
+    ScavTrap(const std::string &name);
+    // Copy constructor
+    ScavTrap(const ScavTrap &other);
+    ScavTrap();
+    ScavTrap &operator=(const ScavTrap &other);
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);

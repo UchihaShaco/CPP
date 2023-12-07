@@ -1,9 +1,27 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(const std::string &name) 
-   : ClapTrap(name),m_name(name), m_hitPoints(100), m_energyPoints(100), m_attackDamage(30) {
+FragTrap::FragTrap() : ClapTrap() 
+  {
+    m_name = "scav default cons";
+    m_energyPoints = 100;
+    m_attackDamage = 20;
+
      std::cout << "FragTrap constructor called" << std::endl;
+}
+
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
+{ 
+    std::cout << "FragTrap Parameterized constructor called" << std::endl;
+    m_hitPoints = 100;
+    m_energyPoints = 100;
+    m_attackDamage = 30;
+}
+
+
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) // the copy constructor 
+{
+    std::cout << "FragTrap copy constructor called" << std::endl;   
 }
 
 FragTrap::~FragTrap()
@@ -11,10 +29,23 @@ FragTrap::~FragTrap()
     std::cout << "FragTrap destructor called" << std::endl;
 }
 
+FragTrap &FragTrap::operator=(const FragTrap &other)
+{
+    if (this == &other)
+    {
+        return *this;
+    }
+    m_name = other.m_name;
+    m_hitPoints = other.m_hitPoints;
+    m_energyPoints = other.m_energyPoints;
+    m_attackDamage = other.m_attackDamage;
+    return *this;
+}
 void FragTrap::attack(const std::string &target)
 {
     std::cout << "FragTrap " << m_name << " attacks " << target << ", causing " << m_attackDamage << " points of damage!" << std::endl;
 }
+
 
 void FragTrap::takeDamage(unsigned int amount)
 {

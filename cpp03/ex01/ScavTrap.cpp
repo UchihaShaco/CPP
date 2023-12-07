@@ -11,6 +11,27 @@ ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap " << m_name << " is destroyed!" << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
+    std::cout << "Copy constructor called" << std::endl;
+    m_attackDamage = other.m_attackDamage;
+    m_energyPoints = other.m_energyPoints;
+    m_hitPoints = other.m_hitPoints;
+    m_name = other.m_name;
+
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+    if (this == &other)
+    {
+        return *this;
+    }
+    m_name = other.m_name;
+    m_hitPoints = other.m_hitPoints;
+    m_energyPoints = other.m_energyPoints;
+    m_attackDamage = other.m_attackDamage;
+    return *this;
+}
+
 void ScavTrap::attack(const std::string& target) {
     std::cout << "ScavTrap " << m_name << " attacks " << target << ", causing " << m_attackDamage << " points of damage!" << std::endl;
 }
