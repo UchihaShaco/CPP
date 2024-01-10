@@ -1,6 +1,6 @@
 NAME = ex00
 
-SOURCES = Main.cpp Animal.cpp Dog.cpp Cat.cpp\
+SOURCES = Main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

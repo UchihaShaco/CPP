@@ -3,25 +3,20 @@
 #include "Cat.hpp"
 
 int main() {
-    const Animal* meta = new Animal();
-    const Animal* doggie = new Dog();
-    const Animal* kadisa = new Cat();
-    // const Animal* wrong = new WrongCat();
+    int arraySize = 4;
+    Animal* animals[arraySize];
 
-    std::cout << doggie->getType() << " " << std::endl;
-    std::cout << kadisa->getType() << " " << std::endl;
-    kadisa->makeSound();  // will output the cat sound!
-    doggie->makeSound();
-    meta->makeSound();
-    
-    // Additional tests
-    // std::cout << wrong->getType() << " " << std::endl;
-    // wrong->makeSound();
+    for (int i = 0; i < arraySize / 2; ++i) {
+        animals[i] = new Dog();
+    }
 
-    delete meta;
-    delete doggie;
-    delete kadisa;
-    // delete wrong;
+    for (int i = arraySize / 2; i < arraySize; ++i) {
+        animals[i] = new Cat();
+    }
+
+    for (int i = 0; i < arraySize; ++i) {
+        delete animals[i];
+    }
 
     return 0;
 }

@@ -26,6 +26,12 @@ Dog& Dog::operator=(const Dog& other) {
     return *this;
 }
 
+void Dog::setBrain(std::string ideas[100]) 
+{
+    for (int i = 0; i < 100; i++) {
+        brain[i] = ideas[i];
+    }
+}
 void Dog::makeSound() const {
     std::cout << "Woof! Woof!" << std::endl;
 }

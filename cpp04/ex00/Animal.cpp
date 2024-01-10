@@ -12,7 +12,7 @@
 // Default constructor
 
 Animal::Animal() {
-    type = "Generic Animal";
+    type = "Really Animal";
     std::cout << "Default Animal constructor called for: " << type << std::endl;
 }
 

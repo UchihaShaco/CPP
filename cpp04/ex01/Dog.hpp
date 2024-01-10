@@ -5,7 +5,10 @@
 #include "Animal.hpp"
 #include <iostream>
 
-class Dog : public Animal {
+class Dog : public Animal
+{
+private:
+    Brain* brain;
 public:
     // Default constructor
     Dog();
@@ -15,11 +18,11 @@ public:
     ~Dog();
     
     // Copy constructor
+
     Dog(const Dog& other);
-
     Dog& operator=(const Dog& other);
-
     void makeSound() const; // or virtual void makeSound() const;
+    void setBrain(std::string ideas[100]);
 };
 
 #endif
