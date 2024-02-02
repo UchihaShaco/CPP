@@ -1,20 +1,21 @@
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET = ex02
-SRCS = main.cpp ClapTrap.cpp FragTrap.cpp
-OBJS = $(SRCS:.cpp=.o)
+NAME = ex02
 
-all: $(TARGET)
+SOURCES = Main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp \
 
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
+OBJECTS = $(SOURCES:%.cpp=%.o)
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+all: $(NAME)
+
+$(NAME):$(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
 
 clean:
-	rm -f $(OBJS)
-fclean:
-	rm -f $(OBJS) $(TARGET)
-re: fclean all
+	/bin/rm -f $(OBJECTS)
 
+fclean: clean
+	/bin/rm -f $(NAME)
+
+re: fclean all
