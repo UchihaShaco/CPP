@@ -19,10 +19,9 @@ public:
     // Copy assignment operator
     Animal& operator=(const Animal& other);
     // Destructor
-   virtual ~Animal();
-    virtual void makeSound() const ;
-
-    std::string getType() const ;
+virtual ~Animal();
+virtual void makeSound() const ;
+std::string getType() const ;
 
 };
 

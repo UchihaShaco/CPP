@@ -2,29 +2,6 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
-// int main() {
-//     const Animal* meta = new Animal();
-//     const Animal* doggie = new Dog();
-//     const Animal* kadisa = new Cat();
-//     // const Animal* wrong = new WrongCat();
-
-//     std::cout << doggie->getType() << " " << std::endl;
-//     std::cout << kadisa->getType() << " " << std::endl;
-//     kadisa->makeSound();  // will output the cat sound!
-//     doggie->makeSound();
-//     meta->makeSound();
-    
-//     // Additional tests
-//     // std::cout << wrong->getType() << " " << std::endl;
-//     // wrong->makeSound();
-
-//     delete meta;
-//     delete doggie;
-//     delete kadisa;
-//     // delete wrong;
-
-//     return 0;
-// }
 
 #include "Animal.hpp"
 #include "Dog.hpp"
@@ -33,24 +10,29 @@
 
 int main() {
     const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    // i->makeSound(); // will output the cat sound!
-    // j->makeSound();
+    const Animal* puppy = new Dog();
+    const Animal* kittie = new Cat();
+    std::cout << puppy->getType() << " " << std::endl;
+    std::cout << kittie->getType() << " " << std::endl;
+	std::cout << "now cat make sound:";
+    kittie->makeSound(); // will output the cat sound!
+	std::cout << "\nnow dog make sound:";
+    puppy->makeSound();
+	std::cout << "\n";
     meta->makeSound();
 
     // Additional tests
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongI = new WrongCat();
     std::cout << wrongI->getType() << " " << std::endl;
+	std::cout << "\nnow wrong make sound:";
     wrongI->makeSound();
     wrongMeta->makeSound();
+	std::cout << "\n";
 
     delete meta;
-    delete j;
-    delete i;
+    delete puppy;
+    delete kittie;
     delete wrongMeta;
     delete wrongI;
 

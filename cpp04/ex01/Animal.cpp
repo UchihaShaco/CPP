@@ -23,8 +23,7 @@ Animal& Animal::operator=(const Animal& other) {
         type = other.type;
     }
     std::cout << "Copy assignment operator called for: " << type << std::endl;
-    return *this; // it returns a reference to itself
-}
+    return *this;
 
 // Destructor
 
@@ -41,5 +40,4 @@ std::string Animal::getType() const {
 void Animal::makeSound() const {
     std::cout << "Animal sound!" << std::endl;
 }
-
-// command to coppy everything from current directory to the ex02 directory is 
+ 

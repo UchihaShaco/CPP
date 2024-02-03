@@ -19,7 +19,7 @@ public:
 
     Dog& operator=(const Dog& other);
 
-    void makeSound() const; // or virtual void makeSound() const;
+    void makeSound() const;
 };
 
 #endif

@@ -30,7 +30,7 @@ Animal& Animal::operator=(const Animal& other) {
         type = other.type;
     }
     std::cout << "Copy assignment operator called for: " << type << std::endl;
-    return *this; // it returns a reference to itself
+    return *this;
 }
 
 // Destructor
