@@ -12,6 +12,8 @@ all: $(NAME)
 $(NAME):$(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
 
+Main.o: Main.cpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+
 clean:
 	/bin/rm -f $(OBJECTS)
 
