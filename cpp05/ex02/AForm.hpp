@@ -1,9 +1,13 @@
-#pragma once
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
-#include <iostream>
+#include <string>
 #include "Bureaucrat.hpp"
+#include <iostream>
+#include <stdexcept>
+
 class Bureaucrat;
-class Form
+class AForm
 {
 private:
     const std::string _name;
@@ -12,6 +16,9 @@ private:
     const int _gradeToExecute;
 
 public:
+    AForm(const std::string &name, int gradeToSign, int gradeToExecute);
+    virtual ~AForm();
+
     class GradeTooLowException : public std::exception
     {
     public:
@@ -29,15 +36,16 @@ public:
         virtual const char *what() const throw();
     };
 
-    Form(std::string name, int gradeToSign, int gradeToExecute);
-    ~Form();
+    // Getters
     std::string getName() const;
     bool getSignedStatus() const;
     int getGradeToSign() const;
     int getGradeToExecute() const;
 
-    void signForm(Bureaucrat &bureaucrat);
-
+    // Member functions
     void beSigned(Bureaucrat &bureaucrat);
+    virtual void execute(const Bureaucrat &executor) const = 0;
 };
-std::ostream &operator<<(std::ostream &os, const Form &form);
+
+std::ostream &operator<<(std::ostream &os, const AForm &form);
+#endif

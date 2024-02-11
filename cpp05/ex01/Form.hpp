@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
 class Bureaucrat;
 class Form
 {
@@ -40,4 +41,5 @@ public:
 
     void beSigned(Bureaucrat &bureaucrat);
 };
+
 std::ostream &operator<<(std::ostream &os, const Form &form);

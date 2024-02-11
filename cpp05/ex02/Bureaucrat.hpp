@@ -1,8 +1,8 @@
 #pragma once
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 #include <stdexcept>
-class Form;
+class AForm;
 class Bureaucrat
 {
 private:
@@ -27,7 +27,7 @@ public:
 
     const std::string &getName() const;
     int getGrade() const;
-    void signForm(Form &form);
+    void signForm(AForm &form);
     void incrementGrade();
     void decrementGrade();
 };
