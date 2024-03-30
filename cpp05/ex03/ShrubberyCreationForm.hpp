@@ -28,7 +28,7 @@ public:
         virtual const char *what() const throw();
     };
 
-    void execute(const Bureaucrat& executor) const override;
+    void execute(const Bureaucrat& executor) const;
 };
 
 #endif
