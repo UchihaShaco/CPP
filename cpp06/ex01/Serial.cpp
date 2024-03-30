@@ -1,4 +1,3 @@
-// Serializer.cpp
 #include "Serial.hpp"
 
 unsigned long Serializer::serialize(Data *ptr)
