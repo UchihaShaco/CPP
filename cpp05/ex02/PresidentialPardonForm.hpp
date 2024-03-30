@@ -29,6 +29,6 @@ public:
 
     // operator
     
-    void execute(const Bureaucrat &executor) const override;
+    void execute(const Bureaucrat &executor) const;
 };
     std::ostream &operator<<(std::ostream &os, const PresidentialPardonForm &form);
