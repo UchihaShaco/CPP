@@ -1,6 +1,6 @@
 NAME = ex02
 
-SOURCES = main.cpp Bureaucrat.cpp  AForm.cpp ShrubberyCreationForm.cpp\
+SOURCES = main.cpp Bureaucrat.cpp  AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

@@ -1,18 +1,18 @@
-NAME = ex01
+NAME = ex03
 
-SOURCES = main.cpp Bureaucrat.cpp Form.cpp\
+SOURCES = main.cpp Intern.cpp Bureaucrat.cpp  AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):$(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
 
-Main.o: 
+main.o: main.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
 
 clean:
 	/bin/rm -f $(OBJECTS)
