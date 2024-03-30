@@ -1,6 +1,6 @@
-NAME = ex00
+NAME = ex01
 
-SOURCES = main.cpp \
+SOURCES = main.cpp Serial.cpp \
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 

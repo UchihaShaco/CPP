@@ -2,12 +2,11 @@
 
 #include <string>
 
-class ScalarConverter {
+class ScalarConverter
+{
 private:
     ScalarConverter();
 
 public:
-    static void convert(const std::string& literal);
+    static void convert(const std::string &literal);
 };
-
-
