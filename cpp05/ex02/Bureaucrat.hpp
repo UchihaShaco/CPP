@@ -34,4 +34,3 @@ public:
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
 
-// to copy everything from current directory to ../ex02 use the following command in the terminal: cp * ../ex02

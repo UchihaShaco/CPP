@@ -32,3 +32,35 @@ const char *AForm::GradeTooLowException::what() const throw()
 {
 	return "AForm exception, Grade is too low";
 }
+
+const char *AForm::GradeTooHighException::what() const throw()
+{
+    return "AForm exception, Grade is too high";
+}
+
+const char *AForm::FormNotSignedException::what() const throw()
+{
+    return "AForm exception, Form not signed";
+}
+
+
+void AForm::beSigned(Bureaucrat &bureaucrat)
+{
+    if (bureaucrat.getGrade() > _gradeToSign)
+        throw AForm::GradeTooLowException();
+    _signedStatus = true;
+}
+
+void AForm::setSignedStatus(bool status)
+{
+    _signedStatus = status;
+}
+
+std::ostream &operator<<(std::ostream &os, const AForm &form)
+{
+    os << "Form: " << form.getName() << ", Grade to sign: " << form.getGradeToSign() << ", Grade to execute: " << form.getGradeToExecute() << ", Signed: " << form.getSignedStatus();
+    return os;
+}
+
+
+
