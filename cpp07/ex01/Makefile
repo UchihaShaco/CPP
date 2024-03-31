@@ -1,6 +1,6 @@
-NAME = ex00
+NAME = ex01
 
-SOURCES = main.cpp ScalarConverter.cpp
+SOURCES = main.cpp
 
 OBJECTS = $(SOURCES:%.cpp=%.o)
 
@@ -12,7 +12,7 @@ all: $(NAME)
 $(NAME):$(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(NAME)
 
-Main.o:
+Main.o: main.cpp
 
 clean:
 	/bin/rm -f $(OBJECTS)
